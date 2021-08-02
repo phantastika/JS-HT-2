@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        margin-top: 70px;
+        background-color: rgb(37, 37, 61);
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        text-decoration: none;
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-lg">
+        <h1 class="text-center">Home Task #2</h1>
+        <ol>
+          <li><a href="./pages//time.html">Time</a></li>
+          <li><a href="./pages/room.html">Room</a></li>
+          <li><a href="./pages/max-number.html">Max-number</a></li>
+          <li><a href="./pages/test.html">Test</a></li>
+          <li><a href="./pages/check-date.html">Check-date</a></li>
+          <li><a href="./pages/linear equation.html">Linear equation</a></li>
+          <li>
+            <a href="./pages/quadratic equation.html">Quadratic equation</a>
+          </li>
+          <li><a href="./pages/jalousie.html">Jalousie</a></li>
+          <li><a href="./pages/air-petrol.html">Airplane-petrol</a></li>
+        </ol>
+        <script>
+            var hight = parseFloat(prompt("Enter the hight of room in meters"));
+            var width = parseFloat (prompt("Enter the width of room in meters"));
+            var lenght = parseFloat (prompt("Enter the lenght of room in meters"));
+            var doorHight = parseFloat (prompt("Enter hight of door in centimeters")/100);
+            var doorWidth = parseFloat (prompt("Enter width of door in centimeters")/100);
+            var numberWindows = parseFloat (prompt("Enter numbers of windows"));
+            var windowWidth = parseFloat (prompt("Enter the width of window in centimeters")/100);
+            var windowHight = parseFloat (prompt("Enter the hight of window in centimeters")/100);
+            var rollWidth = parseFloat (prompt("Enter the width of roll in centimeters")/100);
+            var rollHight = parseFloat (prompt("Enter the hight of roll in meters"));
+                
+            var squareRoof = (width*lenght)
+            var squareDoor = (doorHight*doorWidth)
+            var squareWindow = (windowWidth*windowHight)*numberWindows
+            var squareWall = (((width+lenght)*2)*hight)-squareDoor-squareWindow
+            var squareOneRoll = rollWidth*rollHight
+            var rollForWall = Math.ceil (squareWall/squareOneRoll)
+            var rollForRoof = Math.ceil (squareRoof/squareOneRoll)
+            var totalRoll = Math.ceil (rollForWall + rollForRoof)
+            alert(
+          "Needed numbers of rolls for walls are: "+rollForWall+"\n" + "Needed numbers of rolls for the roof are: " +rollForRoof + "\n" + "Needed total numbers of rolls are: " +totalRoll
+        );
+
+        </script>
+  </body>
+</html>
