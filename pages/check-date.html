@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check-date</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        margin-top: 70px;
+        background-color: rgb(37, 37, 61);
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        text-decoration: none;
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-lg">
+      <h1 class="text-center">Home Task #2</h1>
+      <ol>
+        <li><a href="./time.html">Time</a></li>
+        <li><a href="./room.html">Room</a></li>
+        <li><a href="./max-number.html">Max-number</a></li>
+        <li><a href="./test.html">Test</a></li>
+        <li><a href="./check-date.html">Check-date</a></li>
+        <li><a href="./linear equation.html">Linear equation</a></li>
+        <li>
+          <a href="./quadratic equation.html">Quadratic equation</a>
+        </li>
+        <li><a href="./jalousie.html">Jalousie</a></li>
+        <li><a href="./air-petrol.html">Airplane-petrol</a></li>
+      </ol>
+      <script>
+        let day = parseInt(prompt("Enter a day number "));
+        let month = parseInt(prompt("Enter a month number "));
+        let year = parseInt(prompt("Enter a year after 1582 year"));
+        let maxDayInMonth;
+        if (month === 4 || month === 6 || month === 9 || month === 11) {
+          maxDayInMonth = 30;
+        } else {
+          if (month === 2) {
+            if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+              maxDayInMonth = 29;
+            } else {
+              maxDayInMonth = 28;
+            }
+          } else {
+            maxDayInMonth = 31;
+          }
+        }
+        if (day <= maxDayInMonth && month > 0 && month <= 12 && year >= 1582) {
+          alert("Data is valid");
+        } else {
+          alert("Data isn't valid");
+        }
+      </script>
+    </div>
+  </body>
+</html>

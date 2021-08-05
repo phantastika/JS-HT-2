@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let weightGoods = parseInt(
+        prompt(
+          "Enter the number which is response of the weight of goods" +
+            "\n" +
+            "1. Weight up to 1 ton" +
+            "\n" +
+            "2. Weight up to 2 tons" +
+            "\n" +
+            "3. Weight up to 3 tons" +
+            "\n" +
+            "4. Weight up to 4 tons" +
+            "\n" +
+            "5. Weight up to 5 tons"
+        )
+      );
+      if (weightGoods >= 6)
+        alert(prompt("Sorry, the wigth is too higher. Enter correct data."));
+      let fuelStock = parseInt(
+        prompt("Enter a fuel stock in your tank in litras")
+      );
+      let distanceTranzit = parseInt(
+        prompt("Enter the distance to the Tranzit point in km")
+      );
+      let distanceFinish = parseInt(
+        prompt("Enter the distance from the Tranzit to the Finish point in km")
+      );
+      let tankVolume = 300;
+      let totalDistance = distanceTranzit + distanceFinish;
+      if (weightGoods == 1) {
+        totalDistance / 100;
+      }
+    </script>
+  </body>
+</html>

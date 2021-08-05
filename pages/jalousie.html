@@ -5,6 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jalousie</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        margin-top: 70px;
+        background-color: rgb(37, 37, 61);
+        color: white;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      a:hover {
+        text-decoration: none;
+        color: yellow;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="container-lg">
+      <h1 class="text-center">Home Task #2</h1>
+      <ol>
+        <li><a href="./time.html">Time</a></li>
+        <li><a href="./room.html">Room</a></li>
+        <li><a href="./max-number.html">Max-number</a></li>
+        <li><a href="./test.html">Test</a></li>
+        <li><a href="./check-date.html">Check-date</a></li>
+        <li><a href="./linear equation.html">Linear equation</a></li>
+        <li>
+          <a href="./quadratic equation.html">Quadratic equation</a>
+        </li>
+        <li><a href="./jalousie.html">Jalousie</a></li>
+        <li><a href="./air-petrol.html">Airplane-petrol</a></li>
+      </ol>
+      <script>
+        let material = parseInt (prompt ("Enter the number of the chosen jalousie:" + "\n" +
+            "1. Plastic, 200 UAH sq/m" +
+            "\n" +
+            "2. Textile, 250 UAH sq/m" +
+            "\n" +
+            "3. Aluminum, 350 UAH sq/m")); 
+        let pricePlastic = 200
+        let priceTextile = 250 
+        let priceAluminum = 350 
+        let widthOrder = parseInt (prompt("Enter the needed height in sm: "))/100
+        let heightOrder = parseInt (prompt("Enter the needed width in sm: "))/100   
+
+        if (material === 1) {     
+          alert(
+          "Price per sq/m: " + pricePlastic + " UAH" + "\n" + 
+           "Square is:  " + widthOrder*heightOrder + "\n" + 
+           "Paiment is:  " + (widthOrder*heightOrder)*pricePlastic + " UAH"
+        );
+        }
+         
+        if (material === 2) {
+          alert(
+          "Price per sq/m: " + priceTextile + " UAH" + "\n" + 
+           "Square is:  " + widthOrder*heightOrder + "\n" + 
+           "Paiment is:  " + (widthOrder*heightOrder)*priceTextile + " UAH"
+        );
+        }
+  
+      
+        if (material === 3) {
+             alert(
+          "Price per sq/m: " + priceAluminum + " UAH" + "\n" + 
+           "Square is:  " + widthOrder*heightOrder + "\n" + 
+           "Payment is:  " + (widthOrder*heightOrder)*priceAluminum + " UAH"
+        ); 
+        }
+    
+           
+      </script>
+  </body>
 </html>
