@@ -8,36 +8,48 @@
   </head>
   <body>
     <script>
-      let weightGoods = parseInt(
-        prompt(
-          "Enter the number which is response of the weight of goods" +
-            "\n" +
-            "1. Weight up to 1 ton" +
-            "\n" +
-            "2. Weight up to 2 tons" +
-            "\n" +
-            "3. Weight up to 3 tons" +
-            "\n" +
-            "4. Weight up to 4 tons" +
-            "\n" +
-            "5. Weight up to 5 tons"
-        )
-      );
-      if (weightGoods >= 6)
-        alert(prompt("Sorry, the wigth is too higher. Enter correct data."));
-      let fuelStock = parseInt(
-        prompt("Enter a fuel stock in your tank in litras")
-      );
-      let distanceTranzit = parseInt(
-        prompt("Enter the distance to the Tranzit point in km")
-      );
-      let distanceFinish = parseInt(
-        prompt("Enter the distance from the Tranzit to the Finish point in km")
-      );
-      let tankVolume = 300;
-      let totalDistance = distanceTranzit + distanceFinish;
-      if (weightGoods == 1) {
-        totalDistance / 100;
+      let weightGoods = parseInt(prompt("Enter the weight of goods"));
+      if (weightGoods > 5) {
+        alert("Sorry, the wigth is too high. Enter correct data.");
+      } else {
+        let fuelStock = parseInt(
+          prompt("Enter a fuel stock in your tank in litras")
+        );
+        let distanceTranzit = parseInt(
+          prompt("Enter the distance to the Tranzit point in km")
+        );
+        let distanceFinish = parseInt(
+          prompt(
+            "Enter the distance from the Tranzit to the Finish point in km"
+          )
+        );
+        let tankVolume = parseInt(prompt("Enter the volume of tank"));
+        let totalDistance = distanceTranzit + distanceFinish;
+        let fuelConsumption;
+        if (weightGoods <= 1) {
+          fuelConsumption = 25;
+        } else if (weightGoods <= 2) {
+          fuelConsumption = 30;
+        } else if (weightGoods <= 3) {
+          fuelConsumption = 35;
+        } else if (weightGoods <= 4) {
+          fuelConsumption = 42;
+        } else {
+          fuelConsumption = 50;
+        }
+        let neededFuel = (totalDistance * fuelConsumption) / 100;
+        if (neededFuel < fuelStock) {
+          alert("You have enought fuel");
+        } else {
+          let stockInTankInC =
+            fuelStock - (distanceTranzit * fuelConsumption) / 100;
+          let fuelUp = neededFuel - fuelStock;
+          if (fuelUp >= tankVolume - stockInTankInC) {
+            alert("Warning! The tank is too small.");
+          } else {
+            alert("You need to fuel up " + fuelUp + " in Tranzit point");
+          }
+        }
       }
     </script>
   </body>
